@@ -63,8 +63,6 @@ class _secondpageState extends State<secondpage> {
               ),
 
 
-
-
             ],
           ),
           SizedBox(height:100),

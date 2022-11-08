@@ -131,7 +131,6 @@ class _bmiState extends State<bmi> {
                     con='healthy weight';}
                   if( bmi>25) {
                     con='overweight';}
-
                 });
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>secondpage(bmi: bmi,con: con,)));
 
