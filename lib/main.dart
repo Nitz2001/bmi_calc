@@ -14,7 +14,7 @@ class bmi extends StatefulWidget {
 class _bmiState extends State<bmi> {
   double height = 100;
   double bmi = 0;
-  int value = 0;
+  int value = 30;
   String con='____________';
 
   @override
