@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:bmi_calculator/secondpage.dart';
 
 void main() => runApp(MaterialApp(
   home: bmi(),
@@ -84,8 +85,8 @@ class _bmiState extends State<bmi> {
                   },
                   child: Text('+',
                     style: TextStyle(
-                    fontSize: 20,
-                  ),),
+                      fontSize: 20,
+                    ),),
                   style: ElevatedButton.styleFrom(
                     shape: CircleBorder(),
                     padding: EdgeInsets.all(28),
@@ -99,7 +100,7 @@ class _bmiState extends State<bmi> {
 
                   },
                   child: Text('-',
-                   style: TextStyle(
+                    style: TextStyle(
                       fontSize: 25,
                     ),),
                   style: ElevatedButton.styleFrom(
@@ -125,36 +126,22 @@ class _bmiState extends State<bmi> {
                 setState(() {
                   bmi = (value) / ((height / 100) * (height / 100));
                   if(bmi <18.5) {
-                  con='underweight';}
+                    con='underweight';}
                   if(bmi >18.5 && bmi< 25) {
                     con='healthy weight';}
                   if( bmi>25) {
                     con='overweight';}
 
                 });
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>secondpage(bmi: bmi,con: con,)));
 
               },
               child: const Text('Calculate'
               ),
             ),
             SizedBox(height: 20,),
-            Text(
-              "BMI = ${bmi.round()}",
-              style: TextStyle(
-                color: Colors.purple,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 20,),
-            Text(
-              "You are $con",
-              style: TextStyle(
-                color: Colors.deepPurpleAccent,
-                fontSize: 25,
 
-              ),
-            ),
+
           ],
         ));
   }
